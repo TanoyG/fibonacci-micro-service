@@ -30,8 +30,8 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: fib-mysql-vol
-    volumes:
-      - name: fic-mysql-vol
-        persistentVolumeClaim:
-          claimName: mysql-vol-claim
+      volumes:
+        - name: fic-mysql-vol
+          persistentVolumeClaim:
+            claimName: mysql-vol-claim
       
