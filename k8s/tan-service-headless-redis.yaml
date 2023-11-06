@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: tan-fib-redis-service-h
 spec:
-  ClusterIP: None
+  clusterIP: None
   ports:
    -  port: 6379
       targetPort: 6379
