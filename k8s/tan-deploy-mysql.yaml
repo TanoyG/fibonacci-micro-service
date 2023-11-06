@@ -1,0 +1,33 @@
+apiVesion: apps/v1
+kind: Deployment
+metadata:
+  name: tan-fib-mysql-d
+  labels:
+    app: fib-mysql-d
+spec:
+  selector:
+    matchLabels:
+      app: fib-mysql
+  template:
+    metadata:
+      labels:
+        app: fib-mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: root
+            - name: MYSQL_DATABASE
+              value: fibinfo
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: fib-mysql-vol
+    volumes:
+      - name: fic-mysql-vol
+        persistentVolumeClaim:
+          claimName: mysql-vol-claim
+      
