@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tan-fib-redis-stateful
+  labels:
+    app: fib-redis-stateful
+spec:
+  selector:
+    matchLabels:
+      app: fib-redis
+  replicas: 2
+  serviceName: tan-fib-redis-service-h
+  template:
+    metadata:
+      labels:
+        app: fib-redis
+    spec:
+      containers:
+       -  name: redis
+          image: redis
+          ports:
+           -  containerPort: 6379
+  
