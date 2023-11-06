@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mysql-vol-claim
 spec:
-  storageClass: local-storage
+  storageClassName: local-storage
   accessModes:
     -  ReadWriteMany
   resources:
