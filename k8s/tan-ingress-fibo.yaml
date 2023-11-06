@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tan-fibo-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /fibo-app/?(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: fibonacci-service
+                port:
+                  number: 80

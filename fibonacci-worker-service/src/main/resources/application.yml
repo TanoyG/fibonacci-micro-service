@@ -10,5 +10,5 @@ spring:
     
   data:
     redis:
-      host: fibonacci-redis-service
+      host: tan-fib-redis-service
       port: 6379

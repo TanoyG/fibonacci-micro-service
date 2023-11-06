@@ -4,7 +4,6 @@ metadata:
   name: fibonacci-deploy
   labels:
     app: fibonaccidep
-    env: test
 spec:
   selector:
     matchLabels:

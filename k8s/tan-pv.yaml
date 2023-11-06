@@ -9,7 +9,7 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   local:
-    path: /mnt/postgres/fibo-app
+    path: /mnt/mysql/fibo-app
   nodeAffinity:
     required:
       nodeSelectorTerms:
