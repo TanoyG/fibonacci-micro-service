@@ -21,6 +21,10 @@ spec:
               value: root
             - name: MYSQL_DATABASE
               value: fibinfo
+            - name: MYSQL_USER
+              value: tghosh
+            - name: MYSQL_PASSWORD
+              value: tghosh
           ports:
             - containerPort: 3306
           volumeMounts:
