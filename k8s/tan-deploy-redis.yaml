@@ -1,20 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fibonacci-redis-deploy
+  name: tan-fib-redis-d
   labels:
-    app: fibonacciredisdep
-    env: test
+    app: fib-redis-d
 spec:
   selector:
     matchLabels:
-      app: fibonacciredis
-  replicas: 1
+      app: fib-redis
+  replicas: 2
   template:
     metadata:
-      name: fibonacci-redis-pod
       labels:
-        app: fibonacciredis
+        app: fib-redis
     spec:
       containers:
        -  name: redis
