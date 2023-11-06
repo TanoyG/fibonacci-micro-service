@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fibonacci-redis-deploy
+  labels:
+    app: fibonacciredisdep
+    env: test
+spec:
+  selector:
+    matchLabels:
+      app: fibonacciredis
+  replicas: 1
+  template:
+    metadata:
+      name: fibonacci-redis-pod
+      labels:
+        app: fibonacciredis
+    spec:
+      containers:
+       -  name: redis
+          image: redis
+          ports:
+           -  containerPort: 6379
+  

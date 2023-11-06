@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fibonacci-deploy
+  labels:
+    app: fibonaccidep
+    env: test
+spec:
+  selector:
+    matchLabels:
+      app: fibonacci
+  replicas: 1
+  template:
+    metadata:
+      name: fibonacci-pod
+      labels:
+        app: fibonacci
+    spec:
+      containers:
+        - name: fibonacci
+          image: tanoyg/fibonacci-app-service
+          ports:
+           -  containerPort: 9081
+      
+    

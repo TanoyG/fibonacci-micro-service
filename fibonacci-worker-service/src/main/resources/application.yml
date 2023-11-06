@@ -1,0 +1,14 @@
+server:
+  port: 9080
+  
+spring:
+  application:
+    name: fibonacci-worker-service
+    
+  cache:
+    type: redis
+    
+  data:
+    redis:
+      host: fibonacci-redis-service
+      port: 6379
