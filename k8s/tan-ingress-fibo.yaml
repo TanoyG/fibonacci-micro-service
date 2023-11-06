@@ -7,8 +7,8 @@ spec:
   rules:
     - http:
         paths:
-          - path: /fibo-app/?(.*)
-            pathType: ImplementationSpecific
+          - path: /fibo-app/
+            pathType: Prefix
             backend:
               service:
                 name: fibonacci-service
